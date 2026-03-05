@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function HomePage() {
   return (
     <main
-      className="w-full h-screen bg-cover bg-center"
+      className="w-full min-h-screen bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: "url('/home.jpg')" }}
     >
       <div className="flex flex-col h-dvh items-center justify-center">
