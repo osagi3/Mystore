@@ -1,9 +1,17 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useSearchParams } from "react-router";
 import type { Product } from "../service/productsLoader";
 import Button from "../UI/Button";
 
 export default function StorePage() {
   const products = useLoaderData() as Product[];
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const currentPage = Number(searchParams.get("page")) || 1;
+
+  const handlePage = (newPage: number) => {
+    setSearchParams({ page: newPage.toString() });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <main className="bg-gray-100 min-h-dvh p-4 md:p-12">
       <div className="max-w-7xl mx-auto">
@@ -46,6 +54,35 @@ export default function StorePage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center items-center gap-6 mt-16">
+          <Button
+            type="button"
+            className={`p-6 py-2 rounded-full font-bold cursor-pointer transition-all ${
+              currentPage === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-blue-800 text-white hover:scale-105"
+            }`}
+            onClick={() => handlePage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </Button>
+          <span className="text-blue-800 font-black text-lg">
+            {currentPage}
+          </span>
+          <Button
+            type="button"
+            className={`p-6 py-2 rounded-full font-bold cursor-pointer transition-all ${
+              products.length < 12
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-blue-800 text-white hover:scale-105"
+            }`}
+            onClick={() => handlePage(currentPage + 1)}
+            disabled={products.length < 12}
+          >
+            Next
+          </Button>
         </div>
       </div>
     </main>
