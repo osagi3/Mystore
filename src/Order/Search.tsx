@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 
 export default function Search() {
   return (
-    <form className="max-w-lg mx-auto w-full">
+    <form className="grow mx-2 md:mx-auto md:max-w-lg">
       <label className="block mb-2.5 text-sm font-medium sr-only">search</label>
       <div className="relative">
         <div className="absolute inset-y-0 inset-s-0 flex items-center ps-3 pointer-events-none">
@@ -19,7 +19,8 @@ export default function Search() {
           type="submit"
           className="absolute cursor-pointer right-2 top-1/2 -translate-y-1/2 text-white px-4 py-2 bg-blue-800 text-xs  rounded"
         >
-          Search
+          <span className="hidden md:inline text-xs font-bold">Search</span>
+          <span className="md:hidden text-xs">Go</span>
         </Button>
       </div>
     </form>

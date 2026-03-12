@@ -1,11 +1,12 @@
 import { useLoaderData, useSearchParams } from "react-router";
 import type { Product } from "../service/productsLoader";
 import Button from "../UI/Button";
+import { useCart } from "../Context/useCart";
 
 export default function StorePage() {
   const products = useLoaderData() as Product[];
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const { addToCart } = useCart();
   const currentPage = Number(searchParams.get("page")) || 1;
 
   const handlePage = (newPage: number) => {
@@ -48,6 +49,7 @@ export default function StorePage() {
                 <Button
                   className="w-full mt-3 py-2.5 bg-gray-900 text-white text-xs font-bold rounded-xl hover:bg-blue-600 active:scale-95 transition-all cursor-pointer"
                   type="button"
+                  onClick={() => addToCart(product)}
                 >
                   Add to Cart
                 </Button>

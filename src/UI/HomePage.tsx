@@ -7,8 +7,10 @@ export default function HomePage() {
       style={{ backgroundImage: "url('/home.jpg')" }}
     >
       <div className="flex flex-col h-dvh items-center justify-center">
-        <p className="font-bold text-white text-7xl">Welcome.</p>
-        <p className="text-white font-bold text-xl pb-3">
+        <p className="font-bold  text-white text-5xl md:text-7xl lg:text-8xl">
+          Welcome.
+        </p>
+        <p className="text-white font-medium pb-3 text-l md:text-2xl leading-relaxed max-w-2xl text-center">
           You will find everything you need to start your day
         </p>
         <Link
