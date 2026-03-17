@@ -9,6 +9,8 @@ export type CartContextType = {
   removeFromCart: (id: number) => void;
   totalItems: number;
   clearCart: () => void;
+  initVal: number;
+  increment: () => void;
 };
 
 export const CartContext = createContext<CartContextType | undefined>(

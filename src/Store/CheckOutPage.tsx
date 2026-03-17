@@ -33,6 +33,7 @@ export default function CheckOutPage() {
 
   return (
     <div className="max-w-6xl mx-auto p-4 md:p-12">
+      {/* <p>{initVal}: Chackout page </p> */}
       <div className="flex justify-between items-end mb-8">
         <h1 className="text-4xl font-black text-gray-900 tracking-tight">
           Your Cart
@@ -46,7 +47,6 @@ export default function CheckOutPage() {
       </div>
 
       <div className="grid gap-10 lg:grid-cols-3">
-        {/* Item List */}
         <div className="lg:col-span-2 space-y-4">
           {cart.map((item) => (
             <div
@@ -88,7 +88,7 @@ export default function CheckOutPage() {
                     </button>
                   </div>
                   <p className="text-gray-400 text-sm font-medium">
-                    Subtotal:{" "}
+                    Subtotal:
                     <span className="text-gray-900">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>

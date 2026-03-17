@@ -1,4 +1,8 @@
+import type { ReactNode } from "react";
+
 export type Product = {
+  description: ReactNode;
+  category: ReactNode;
   id: number;
   title: string;
   price: number;

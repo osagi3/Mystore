@@ -6,6 +6,7 @@ export type CartItem = Product & { quantity: number };
 
 export default function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [initVal, setInitVal] = useState<number>(0);
 
   const addToCart = (product: Product) => {
     setCart((prevCart) => {
@@ -38,11 +39,22 @@ export default function CartProvider({ children }: { children: ReactNode }) {
   const clearCart = () => {
     setCart([]);
   };
-
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const increment = () => {
+    setInitVal(initVal + 1);
+  };
+  //   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItems = cart.length;
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, totalItems, clearCart }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        totalItems,
+        clearCart,
+        initVal,
+        increment,
+      }}
     >
       {children}
     </CartContext.Provider>
