@@ -33,7 +33,6 @@ export default function CheckOutPage() {
 
   return (
     <div className="max-w-6xl mx-auto p-4 md:p-12">
-      {/* <p>{initVal}: Chackout page </p> */}
       <div className="flex justify-between items-end mb-8">
         <h1 className="text-4xl font-black text-gray-900 tracking-tight">
           Your Cart

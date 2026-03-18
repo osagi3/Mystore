@@ -29,7 +29,7 @@ export default function ProductDetails() {
       onClick={handleClose}
     >
       <div
-        className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row relative animate-in zoom-in-95 duration-300"
+        className="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row relative animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         <Button
@@ -56,7 +56,7 @@ export default function ProductDetails() {
               <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">
                 Uploaded By
               </p>
-              <p className="text-sm font-bold text-gray-700">@StoreAdmin_01</p>
+              <p className="text-sm font-bold text-gray-700">@StoreAdmin</p>
             </div>
           </div>
           <h1 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-tight">
@@ -75,7 +75,7 @@ export default function ProductDetails() {
               </span>
             </div>
             <Button
-              className="px-8 py-4 bg-blue-800 text-white rounded-2xl font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-lg"
+              className="px-5 cursor-pointer py-4 bg-blue-800 text-white rounded-2xl font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-lg"
               type="button"
               onClick={() => {
                 addToCart(product);
