@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type { Product } from "../service/productsLoader";
 import { CartContext } from "./useCart";
 
@@ -39,11 +39,13 @@ export default function CartProvider({ children }: { children: ReactNode }) {
   const clearCart = () => {
     setCart([]);
   };
+
   const increment = () => {
-    setInitVal(initVal + 1);
+    setInitVal((prev) => prev + 1);
   };
-  //   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
   const totalItems = cart.length;
+
   return (
     <CartContext.Provider
       value={{
